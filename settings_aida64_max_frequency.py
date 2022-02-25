@@ -3,30 +3,27 @@ from datetime import timedelta
 
 # #####################  MUST SET THESE CORRECTLY  ###########################
 necessary = {
-    "process_to_switch": "aida_bench64.dll",
     # name of process (could also be "cinebench")
+    "process_to_switch": "aida_bench64.dll",
 
-    "core_num": 6,
     # number of cores
+    "core_num": 6,
 
-    "hyper_threading": True,
     # True or False, whether your CPU has 2 threads per core (SMT is AMD word)
+    "hyper_threading": True,
 }
 ##############################################################################
 
 
 # The below are optional
 other_options = {
+    # Set to a low time so that you can quickly assess max frequencies
     "switch_every": timedelta(minutes=1),
-    # time between switching threads
-    # Changed aida64 per-core duration from 5 minutes to 15 minutes due to
-    # the recommendation here:
-    # https://www.reddit.com/r/Amd/comments/krjnc4/advanced_guide_curve_optimizer_stability_test_and/
-    "sync_on_clock_minute": True,
     # synchronize with wall time because prime95 only logs time in hh:mm
-    "starting_core": 1
+    "sync_on_clock_minute": True,
     # 1-indexed (1 is first, total number of cores is last index)
     # core number to start testing from
+    "starting_core": 1
 }
 
 
